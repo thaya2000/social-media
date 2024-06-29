@@ -52,7 +52,7 @@ export const updateUser = async (req, res) => {
 
       const token = jwt.sign(
         { username: user.username, id: _id },
-        import.meta.env.JWT_KEY,
+        process.env.JWT_KEY,
         { expiresIn: "1h" }
       );
 

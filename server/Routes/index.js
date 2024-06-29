@@ -20,9 +20,7 @@ dotenv.config();
 
 mongoose
   .connect(
-    `mongodb://${import.meta.env.MONGODB_USERNAME}:${
-      import.meta.env.MONGODB_PASSWORD
-    }@mongodb:27017/mern-project?authSource=admin`,
+    `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@mongodb:27017/mern-project?authSource=admin`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => app.listen(5001, () => console.log("Listening")))

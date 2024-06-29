@@ -19,11 +19,11 @@ app.use(cors());
 dotenv.config();
 
 mongoose
-  .connect(import.meta.env.MONGO_DB, {
+  .connect(process.env.MONGO_DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => app.listen(import.meta.env.PORT, () => console.log("Listening")))
+  .then(() => app.listen(process.env.PORT, () => console.log("Listening")))
   .catch((error) => console.log(error));
 
 //usage of routes
