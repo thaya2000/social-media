@@ -23,8 +23,8 @@ services:
       - mongo
     environment:
       - MONGO_DB=mongodb://root:root@mongo:27017/mern-app-social-media?authSource=admin
-      - JWT_KEY = "MERN"
-      - PORT = 5000
+      - JWT_KEY="MERN"
+      - PORT=5000
 
 
   frontend:
@@ -37,7 +37,7 @@ services:
     depends_on:
       - backend
     environment:
-      - REACT_APP_PUBLIC_FOLDER = http://localhost:5000/images/
+      - REACT_APP_PUBLIC_FOLDER=http://localhost:5000/images/
 
 networks:
   mern-net-social-media:
