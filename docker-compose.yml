@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    networks:
+      - mern-net
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
+  backend:
+    build: ./server
+    container_name: backend
+    networks:
+      - mern-net
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://root:root@mongo:27017/mern-app?authSource=admin
+
+  frontend:
+    build: ./client
+    container_name: client
+    networks:
+      - mern-net
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+networks:
+  mern-net:
+    driver: bridge
