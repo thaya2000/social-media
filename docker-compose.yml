@@ -5,7 +5,7 @@ services:
     image: mongo:latest
     container_name: mongo
     networks:
-      - mern-net
+      - mern-net-social-media
     ports:
       - "27017:27017"
     environment:
@@ -14,26 +14,26 @@ services:
 
   backend:
     build: ./server
-    container_name: backend
+    container_name: server
     networks:
-      - mern-net
+      - mern-net-social-media
     ports:
       - "5000:5000"
     depends_on:
       - mongo
     environment:
-      - MONGO_URI=mongodb://root:root@mongo:27017/mern-app?authSource=admin
+      - MONGO_URI=mongodb://root:root@mongo:27017/mern-app-social-media?authSource=admin
 
   frontend:
     build: ./client
     container_name: client
     networks:
-      - mern-net
+      - mern-net-social-media
     ports:
       - "5173:5173"
     depends_on:
       - backend
 
 networks:
-  mern-net:
+  mern-net-social-media:
     driver: bridge

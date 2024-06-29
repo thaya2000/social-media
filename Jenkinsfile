@@ -5,7 +5,7 @@ pipeline {
         stage('Clone repository') {
             steps {
                 script {
-                    git url: 'https://github.com/bvithusan1999/SocialMedia.git', branch : 'main'
+                    git url: 'https://github.com/bvithusan1999/social-media.git', branch : 'main'
                 }
             }
         }
