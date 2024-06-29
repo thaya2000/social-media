@@ -57,7 +57,7 @@ const Auth = () => {
       <img src={logo} alt="" style={{width:"200px" ,height:"200px"}} />
 
         <div className="Webname">
-          <h1>PicVista</h1>
+          <h1>Picvista</h1>
           <h6>Explore the ideas throughout the world</h6>
         </div>
       </div>
