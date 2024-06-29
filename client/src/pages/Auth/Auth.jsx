@@ -54,10 +54,10 @@ const Auth = () => {
       {/* left side */}
 
       <div className="a-left">
-      <img src={logo} alt="" style={{width:"200px" ,height:"200px"}} />
+        <img src={logo} alt="" style={{ width: "200px", height: "200px" }} />
 
         <div className="Webname">
-          <h1>PicVista</h1>
+          {/* <h1>PicVista</h1> */}
           <h6>Explore the ideas throughout the world</h6>
         </div>
       </div>
@@ -65,7 +65,7 @@ const Auth = () => {
       {/* right form side */}
 
       <div className="a-right">
-        <form className="infoForm authForm" >
+        <form className="infoForm authForm">
           <h3>{isSignUp ? "Register" : "Login"}</h3>
           {isSignUp && (
             <div>
