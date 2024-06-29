@@ -37,7 +37,7 @@ services:
     depends_on:
       - backend
     environment:
-      - REACT_APP_PUBLIC_FOLDER=http://localhost:5000/images/
+      - REACT_APP_PUBLIC_FOLDER=http://server:5000/images/
 
 networks:
   mern-net-social-media:
