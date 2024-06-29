@@ -24,7 +24,7 @@ const Post = ({data}) => {
 
   return (
     <div className="Post">
-        <img src={data.image? process.env.REACT_APP_PUBLIC_FOLDER + data.image:""} 
+        <img src={data.image? import.meta.env.REACT_APP_PUBLIC_FOLDER + data.image:""} 
         alt="" />
 
 

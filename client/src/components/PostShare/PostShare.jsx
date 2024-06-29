@@ -17,7 +17,7 @@ const PostShare = () => {
     const desc = useRef();
     const {user} = useSelector((state)=>state.authReducer.authData)
     const dispatch = useDispatch();
-    const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+    const serverPublic = import.meta.env.REACT_APP_PUBLIC_FOLDER;
 
     const onImageChange =(event)=>{
         if(event.target.files && event.target.files[0]){

@@ -4,7 +4,7 @@ import { followUser, unfollowUser } from '../../actions/userAction';
 
 
 const User = ({person}) => {
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER 
+  const serverPublic = import.meta.env.REACT_APP_PUBLIC_FOLDER 
   const {user} = useSelector((state)=>state.authReducer.authData)
   const dispatch = useDispatch();
   const [following, setFollowing]= useState(person.followers.includes(user._id))
